@@ -16,13 +16,13 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x859: file p5final.c, line 33.
+Breakpoint 1 at 0x82a: file p5final.c, line 32.
 (gdb) r
-Starting program: /home/runner/ppa-IA2-practice2/a.out 
+Starting program: /home/runner/IA2-Test1-Session2/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p5final.c:33
-33    a=input_number();
+Breakpoint 1, main () at p5final.c:32
+32    a=input_number();
 (gdb) s
 input_number () at p5final.c:7
 7   {
@@ -34,15 +34,15 @@ Enter the number
 (gdb) n
 12
 11    return n;
+(gdb) n
+12  }
 (gdb) p n
 $1 = 12
 (gdb) n
-12  }
-(gdb) n
-main () at p5original.c:34
-34    b=input_number();
+main () at p5final.c:33
+33    b=input_number();
 (gdb) s
-input_number () at p5original.c:7
+input_number () at p5final.c:7
 7   {
 (gdb) n
 9     printf("Enter the number\n");
@@ -57,37 +57,60 @@ Enter the number
 (gdb) p n
 $2 = 16
 (gdb) n
-main () at p5original.c:35
-35    gcd_result=gcd(a,b);
+main () at p5final.c:34
+34    gcd_result=gcd(a,b);
 (gdb) s
-gcd (a=12, b=16) at p5original.c:15
-15      if (a == 0)
+gcd (a=12, b=16) at p5final.c:16
+16    int gcd=1;
 (gdb) n
-17      else if (b == 0)
+17    while(b!=0)
 (gdb) n
-19      else if (a == b)
+19      gcd=a%b;
 (gdb) n
-21      else if (a > b)
+20      a=b;
 (gdb) n
-24          return gcd(a, b-a);
+21      b=gcd;
 (gdb) n
-25  }
-(gdb) p gcd
-$3 = {int (int, int)} 0x55daae2007be <gcd>
-(gdb) p gcd_result
-No symbol "gcd_result" in current context.
+17    while(b!=0)
+(gdb) p a
+$3 = 16
 (gdb) n
-main () at p5original.c:36
-36    output(a,b,gcd_result);
+19      gcd=a%b;
+(gdb) n
+20      a=b;
+(gdb) n
+21      b=gcd;
+(gdb) n
+17    while(b!=0)
+(gdb) p a
+$4 = 12
+(gdb) n
+19      gcd=a%b;
+(gdb) n
+20      a=b;
+(gdb) n
+21      b=gcd;
+(gdb) n
+17    while(b!=0)
+(gdb) p a
+$5 = 4
+(gdb) n
+23    return a;
+(gdb) n
+24  }
+(gdb) n
+main () at p5final.c:35
+35    output(a,b,gcd_result);
 (gdb) s
-output (a=12, b=16, gcd_result=4) at p5original.c:28
-28    printf("The GCD of %d and %d is %d",a,b,gcd_result);
+output (a=12, b=16, gcd_result=4) at p5final.c:27
+27    printf("The GCD of %d and %d is %d\n",a,b,gcd_result);
 (gdb) n
-29  }
+The GCD of 12 and 16 is 4
+28  }
 (gdb) n
-main () at p5original.c:37
-37    return 0;
+main () at p5final.c:36
+36    return 0;
 (gdb) c
 Continuing.
-The GCD of 12 and 16 is 4[Inferior 1 (process 82) exited normally]
+[Inferior 1 (process 95) exited normally]
 (gdb) 
