@@ -18,18 +18,18 @@ int input_number()
 }
 int is_composite(int n)
 {
- int count=0, f=1;
-  while(f<=n)
+ int f=2;
+  while(f<=n/2)
     {
       if(n%f==0)
-        count++;
+        return 1;
         f++;
     }
-  return count;
+    return 0;
 }
 void output(int n, int composite)
 {
-  if(composite>2)
+  if(is_composite)
     printf("The number %d is a Composite\n",n);
   else
     printf("The number is not Composite\n") ;
