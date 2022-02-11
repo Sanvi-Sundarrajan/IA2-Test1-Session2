@@ -26,7 +26,7 @@ Breakpoint 1, main () at p4final.c:51
 (gdb) n
 52    int n = input_array_size ();
 (gdb) s
-input_array_size () at p4original.c:13
+input_array_size () at p4final.c:13
 13  {
 (gdb) n
 15    printf ("Enter the array size \n");
@@ -41,12 +41,12 @@ Enter the array size
 (gdb) p n
 $1 = 5
 (gdb) n
-main () at p4original.c:53
+main () at p4final.c:53
 53    int a[n];
 (gdb) n
 54    input_array (n, a);
 (gdb) s
-input_array (n=5, a=0x7ffcb00645f0) at p4original.c:22
+input_array (n=5, a=0x7ffcb00645f0) at p4final.c:22
 22    printf("Enter the the number\n");
 (gdb) n
 Enter the the number
@@ -89,17 +89,17 @@ $6 = 12
 (gdb) n
 25  }
 (gdb) n
-main () at p4original.c:55
+main () at p4final.c:55
 55    int sum = sum_composite_numbers (n, a);
 (gdb) s
-sum_composite_numbers (n=5, a=0x7ffcb00645f0) at p4original.c:40
+sum_composite_numbers (n=5, a=0x7ffcb00645f0) at p4final.c:40
 40    int i,sum=0;
 (gdb) n
 41      for(i=0;i<n;i++)
 (gdb) n
 42      if (is_composite(a[i])==1)
 (gdb) s
-is_composite (n=1) at p4original.c:28
+is_composite (n=1) at p4final.c:28
 28   int count=0, f=1;
 (gdb) n
 29    while(f<=n)
@@ -116,7 +116,7 @@ is_composite (n=1) at p4original.c:28
 (gdb) n
 37  }
 (gdb) n
-sum_composite_numbers (n=5, a=0x7ffcb00645f0) at p4original.c:41
+sum_composite_numbers (n=5, a=0x7ffcb00645f0) at p4final.c:41
 41      for(i=0;i<n;i++)
 (gdb) n
 42      if (is_composite(a[i])==1)
@@ -153,16 +153,16 @@ $11 = 20
 (gdb) n
 45  }
 (gdb) n
-main () at p4original.c:56
+main () at p4final.c:56
 56    output (sum);
 (gdb) s
-output (sum=20) at p4original.c:48
+output (sum=20) at p4final.c:48
 48    printf ("Sum=%d\n", sum);
 (gdb) n
 Sum=20
 49  }
 (gdb) n
-main () at p4original.c:57
+main () at p4final.c:57
 57    return 0;
 (gdb) c
 Continuing.

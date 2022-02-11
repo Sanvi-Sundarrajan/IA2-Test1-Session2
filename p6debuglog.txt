@@ -26,7 +26,7 @@ Breakpoint 1, main () at p6final.c:38
 (gdb) n
 40    input_string (str);
 (gdb) s
-input_string (str=0x7ffda20145e0 "\001") at p6original.c:12
+input_string (str=0x7ffda20145e0 "\001") at p6final.c:12
 12    printf (" Enter the string: ");
 (gdb) n
 13    scanf ("%s", str);
@@ -38,13 +38,13 @@ $1 = 0x7ffda20145e0 "hello"
 (gdb) p *str
 $2 = 104 'h'
 (gdb) n
-main () at p6original.c:41
+main () at p6final.c:41
 41    revstr (str);
 (gdb) s
-revstr (str1=0x7ffda20145e0 "hello") at p6original.c:25
+revstr (str1=0x7ffda20145e0 "hello") at p6final.c:25
 25    len = length (str1);
 (gdb) s
-length (str=0x7ffda20145e0 "hello") at p6original.c:17
+length (str=0x7ffda20145e0 "hello") at p6final.c:17
 17    int count = 0;
 (gdb) n
 18    while (str[count] != 0)
@@ -83,7 +83,7 @@ $7 = 5
 (gdb) n
 21  }
 (gdb) n
-revstr (str1=0x7ffda20145e0 "hello") at p6original.c:26
+revstr (str1=0x7ffda20145e0 "hello") at p6final.c:26
 26    for (i = 0; i < len / 2; i++)
 (gdb) n
 28        temp = str1[i];
@@ -108,15 +108,15 @@ $9 = 0x7ffda20145e0 "olleh"
 (gdb) n
 32  }
 (gdb) n
-main () at p6original.c:42
+main () at p6final.c:42
 42    output (str);
 (gdb) s
-output (str1=0x7ffda20145e0 "olleh") at p6original.c:35
+output (str1=0x7ffda20145e0 "olleh") at p6final.c:35
 35    printf (" After reversing the string: %s", str1);
 (gdb) n
 36  }
 (gdb) n
-main () at p6original.c:43
+main () at p6final.c:43
 43    return 0;
 (gdb) c
 Continuing.

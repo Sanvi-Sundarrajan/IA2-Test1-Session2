@@ -16,7 +16,7 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x867: file p2original.c, line 38.
+Breakpoint 1 at 0x867: file p2final.c, line 38.
 (gdb) r
 Starting program: /home/runner/ppa-IA2-practice2/a.out 
 warning: Error disabling address space randomization: Operation not permitted
@@ -39,10 +39,10 @@ Enter the side of triangle
 (gdb) p n
 $1 = 1
 (gdb) n
-main () at p2original.c:39
+main () at p2final.c:39
 39    b = input_side ();
 (gdb) s
-input_side () at p2original.c:9
+input_side () at p2final.c:9
 9   {
 (gdb) n
 11    printf ("Enter the side of triangle\n");
@@ -57,10 +57,10 @@ Enter the side of triangle
 (gdb) p n
 $2 = 2
 (gdb) n
-main () at p2original.c:40
+main () at p2final.c:40
 40    c = input_side ();
 (gdb) s
-input_side () at p2original.c:9
+input_side () at p2final.c:9
 9   {
 (gdb) n
 11    printf ("Enter the side of triangle\n");
@@ -75,10 +75,10 @@ Enter the side of triangle
 (gdb) p n
 $3 = 1
 (gdb) n
-main () at p2original.c:41
+main () at p2final.c:41
 41    isscalene = check_scalene (a, b, c);
 (gdb) s
-check_scalene (a=1, b=2, c=1) at p2original.c:17
+check_scalene (a=1, b=2, c=1) at p2final.c:17
 17    if (a == b && b == c)
 (gdb) n
 19    else if (a == b || b == c || c == a)
@@ -87,10 +87,10 @@ check_scalene (a=1, b=2, c=1) at p2original.c:17
 (gdb) n
 23  }
 (gdb) n
-main () at p2original.c:42
+main () at p2final.c:42
 42    output (a, b, c, isscalene);
 (gdb) s
-output (a=1, b=2, c=1, isscalene=1) at p2original.c:26
+output (a=1, b=2, c=1, isscalene=1) at p2final.c:26
 26    if (isscalene == 2)
 (gdb) n
 32        printf ("The traingle with sides %d,%d,%d is not scalene\n", a, b, c);
@@ -98,7 +98,7 @@ output (a=1, b=2, c=1, isscalene=1) at p2original.c:26
 The traingle with sides 1,2,1 is not scalene
 34  }
 (gdb) n
-main () at p2original.c:43
+main () at p2final.c:43
 43    return 0;
 (gdb) c
 Continuing.
