@@ -24,7 +24,7 @@ warning: Error disabling address space randomization: Operation not permitted
 Breakpoint 1, main () at p2final.c:38
 38    a = input_side ();
 (gdb) s
-input_side () at p2original.c:9
+input_side () at p2final.c:9
 9   {
 (gdb) n
 11    printf ("Enter the side of triangle\n");

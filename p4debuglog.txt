@@ -21,7 +21,7 @@ Breakpoint 1 at 0x8fc: file p4final.c, line 51.
 Starting program: /home/runner/ppa-IA2-practice2/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p4original.c:51
+Breakpoint 1, main () at p4final.c:51
 51  {
 (gdb) n
 52    int n = input_array_size ();

@@ -1,0 +1,93 @@
+gcc -g p5final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x859: file p5final.c, line 33.
+(gdb) r
+Starting program: /home/runner/ppa-IA2-practice2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5final.c:33
+33    a=input_number();
+(gdb) s
+input_number () at p5final.c:7
+7   {
+(gdb) n
+9     printf("Enter the number\n");
+(gdb) n
+Enter the number
+10    scanf("%d",&n);
+(gdb) n
+12
+11    return n;
+(gdb) p n
+$1 = 12
+(gdb) n
+12  }
+(gdb) n
+main () at p5original.c:34
+34    b=input_number();
+(gdb) s
+input_number () at p5original.c:7
+7   {
+(gdb) n
+9     printf("Enter the number\n");
+(gdb) n
+Enter the number
+10    scanf("%d",&n);
+(gdb) n
+16
+11    return n;
+(gdb) n
+12  }
+(gdb) p n
+$2 = 16
+(gdb) n
+main () at p5original.c:35
+35    gcd_result=gcd(a,b);
+(gdb) s
+gcd (a=12, b=16) at p5original.c:15
+15      if (a == 0)
+(gdb) n
+17      else if (b == 0)
+(gdb) n
+19      else if (a == b)
+(gdb) n
+21      else if (a > b)
+(gdb) n
+24          return gcd(a, b-a);
+(gdb) n
+25  }
+(gdb) p gcd
+$3 = {int (int, int)} 0x55daae2007be <gcd>
+(gdb) p gcd_result
+No symbol "gcd_result" in current context.
+(gdb) n
+main () at p5original.c:36
+36    output(a,b,gcd_result);
+(gdb) s
+output (a=12, b=16, gcd_result=4) at p5original.c:28
+28    printf("The GCD of %d and %d is %d",a,b,gcd_result);
+(gdb) n
+29  }
+(gdb) n
+main () at p5original.c:37
+37    return 0;
+(gdb) c
+Continuing.
+The GCD of 12 and 16 is 4[Inferior 1 (process 82) exited normally]
+(gdb) 
