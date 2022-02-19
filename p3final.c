@@ -9,6 +9,7 @@ output:
 
 */
 #include<stdio.h>
+#include<math.h>
 int input_number()
 {
   int n;
@@ -18,18 +19,26 @@ int input_number()
 }
 int is_composite(int n)
 {
- int f=2;
-  while(f<=n/2)
+ /*for(int i=2;i<n/2;i++)
+ {
+   if(n%i==0)
+    return 1;
+ }
+ return 0;(This is not working*/
+ int count=0, f=1;
+  while(f<=n)
     {
       if(n%f==0)
-        return 1;
+        count++;
         f++;
     }
-    return 0;
+  if (count>2)
+  return 1;
+
 }
 void output(int n, int composite)
 {
-  if(is_composite)
+  if(composite==1)
     printf("The number %d is a Composite\n",n);
   else
     printf("The number is not Composite\n") ;
