@@ -24,7 +24,7 @@ int is_composite(int n)
    if(n%i==0)
     return 1;
  }
- return 0;(This is not working*/
+ return 0;(Method 2 )*/
  int count=0, f=1;
   while(f<=n)
     {
