@@ -15,12 +15,13 @@ int input_side ()
 int check_scalene (int a, int b, int c)
 {
   if ((a!=b)&&(b!=c)&&(a!=c))
-    return 0;
+    return 0;//return 1;
+      //return 0;
   
 }
 void output (int a, int b, int c, int isscalene)
 {
-  if (isscalene == 0)
+  if (isscalene == 0)//(isscalene)
     {
       printf ("The traingle with sides %d,%d,%d is scalene\n", a, b, c);
     }
