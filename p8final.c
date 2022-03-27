@@ -64,7 +64,7 @@ Triangle find_smallest_triangle(int n, Triangle t[n])
   Triangle Smallest;
   Smallest.area = t[0].area;
   for(i=0; i<n; i++)
-    if(Smallest.area >=t[i].area)
+    if(Smallest.area >t[i].area)
     {
         Smallest.area=t[i].area;
         Smallest.base=t[i].base;
