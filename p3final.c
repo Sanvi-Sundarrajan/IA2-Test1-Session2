@@ -9,8 +9,7 @@ output:
 
 */
 #include<stdio.h>
-#include<math.h>
-int input_number()
+int input_num()
 {
   int n;
   printf("Enter the number\n");
@@ -39,7 +38,7 @@ void output(int n, int composite)
 }
 int main ()
 {
-int n=input_number();
+int n=input_num();
 int composite= is_composite(n);
 output(n,composite);
 return 0;
